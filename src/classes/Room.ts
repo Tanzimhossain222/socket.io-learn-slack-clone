@@ -8,6 +8,7 @@ export class Room {
   ){
     this.history = [];
   }
+  //test 
 
   addMessage(message: any){
     if (this.history.length > 10){
@@ -16,4 +17,4 @@ export class Room {
     this.history.push(message);
   }
 
-}
+} 

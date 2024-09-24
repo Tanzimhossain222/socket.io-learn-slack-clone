@@ -9,7 +9,7 @@
     <div class="row">
 
         <div class="namespaces">
-             <!-- populated from the server -->
+             <!-- !populated from the server -->
         </div>
         
         <div class="rooms">
@@ -28,64 +28,40 @@
 
         <div class="chat-panel col">
             <div class="room-header row col-12">
-                <div class="col"><span class="curr-room-text">Current Room</span> <span class="curr-room-num-users">Users <span class="glyphicon glyphicon-user"></span></span></div>
+                <div class="col"><span class="curr-room-text">
+                    <!-- !populated room name from the server -->
+                </span> <span class="curr-room-num-users">Users <span class="fa-solid fa-user"></span></span></div>
                 <div class="search">
                         <span class="glyphicon glyphicon-search"></span>
                     <input type="text" id="search-box" placeholder="Search" />
                 </div>
             </div> 
+
             <div class="message-form">
-                <form id="message-form" id="user-input">
+                <form id="message-form">
                     <div class="col-sm-12">
-                        <input id="user-message" type="text" placeholder="Enter your message" />
+                        <input id="user-message" type="text" name="user-message" placeholder="Enter your message" />
                     </div>
                 </form>
             </div>
-            <ul id="messages" class="col-sm-12">
-                <li>
-                    <div class="user-image">
-                        <img src="https://via.placeholder.com/30" />
-                    </div>
-                    <div class="user-message">
-                        <div class="user-name-time">rbunch <span>1:25 pm</span></div>
-                        <div class="message-text">I went running today.</div>
-                    </div>
-                </li>
+            
 
-                <li>
-                    <div class="user-image">
-                        <img src="https://via.placeholder.com/30" />
-                    </div>
-                    <div class="user-message">
-                        <div class="user-name-time">rbunch <span>2:25 pm</span></div>
-                        <div class="message-text">I'm getting my tires changed this afternoon.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="user-image">
-                        <img src="https://via.placeholder.com/30" />
-                    </div>
-                    <div class="user-message">
-                        <div class="user-name-time">rbunch <span>2:29 pm</span></div>
-                        <div class="message-text">I like history.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="user-image">
-                        <img src="https://via.placeholder.com/30" />
-                    </div>
-                    <div class="user-message">
-                        <div class="user-name-time">rbunch <span>2:59 pm</span></div>
-                        <div class="message-text">What day is tomorrow?</div>
-                    </div>
-                </li>
+            <ul id="messages" class="col-sm-12">
+                <!-- !populated message from the server -->
 
             </ul>
+
         </div>
 
     </div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
+
+<script type="text/babel" data-plugins="transform-typescript" src="./script/buildMessageHtml.ts"></script>
+<script type="text/babel" data-plugins="transform-typescript" src="./script/joinRoom.ts"></script>
 <script type="text/babel" data-plugins="transform-typescript" src="./script/joinNs.ts"></script>
+
+
 <script type="text/babel" data-plugins="transform-typescript" src="./script/scripts.ts"></script>
+
